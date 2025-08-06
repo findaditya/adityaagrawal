@@ -1,0 +1,371 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Manga Theme Custom Cursor */
+* {
+  cursor: none !important;
+}
+
+body {
+  cursor: none !important;
+}
+
+button, a, .cursor-pointer {
+  cursor: none !important;
+}
+
+/* Custom Cursor Styles */
+.custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 16px;
+  height: 16px;
+  background: #000;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transition: transform 0.05s ease, background 0.1s ease;
+  transform: translate(-50%, -50%);
+}
+
+.dark .custom-cursor {
+  background: #fff;
+  box-shadow: 0 0 0 1px #000;
+}
+
+.custom-cursor.hover {
+  transform: translate(-50%, -50%) scale(2.5);
+  background: transparent;
+  border: 2px solid #000;
+}
+
+.dark .custom-cursor.hover {
+  border: 2px solid #fff;
+}
+
+.custom-cursor.click {
+  transform: translate(-50%, -50%) scale(0.6);
+}
+
+/* One Piece Manga Style Elements */
+.onepiece-background {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  opacity: 0.08;
+}
+
+/* Manga Panel Frames */
+.manga-frame {
+  position: absolute;
+  border: 4px solid currentColor;
+  background: transparent;
+  box-shadow: inset 0 0 0 2px currentColor;
+}
+
+.frame-1 {
+  top: 8%;
+  left: 2%;
+  width: 180px;
+  height: 120px;
+  transform: rotate(-8deg);
+  clip-path: polygon(0 0, 95% 0, 100% 100%, 5% 100%);
+  animation: float 12s ease-in-out infinite;
+}
+
+.frame-2 {
+  top: 12%;
+  right: 3%;
+  width: 200px;
+  height: 140px;
+  transform: rotate(12deg);
+  clip-path: polygon(5% 0, 100% 0, 95% 100%, 0 100%);
+  animation: float 15s ease-in-out infinite reverse;
+}
+
+.frame-3 {
+  bottom: 20%;
+  left: 1%;
+  width: 160px;
+  height: 200px;
+  transform: rotate(-5deg);
+  clip-path: polygon(0 5%, 100% 0, 100% 95%, 0 100%);
+  animation: float 18s ease-in-out infinite;
+}
+
+.frame-4 {
+  bottom: 15%;
+  right: 2%;
+  width: 220px;
+  height: 160px;
+  transform: rotate(7deg);
+  clip-path: polygon(0 0, 95% 5%, 100% 100%, 5% 95%);
+  animation: float 14s ease-in-out infinite reverse;
+}
+
+.frame-5 {
+  top: 35%;
+  right: 8%;
+  width: 120px;
+  height: 120px;
+  transform: rotate(45deg);
+  border-radius: 50%;
+  animation: float 20s ease-in-out infinite;
+}
+
+/* One Piece Style Action Bubbles */
+.action-bubble {
+  position: absolute;
+  border: 3px solid currentColor;
+  border-radius: 50%;
+  background: transparent;
+}
+
+.bubble-1 {
+  top: 25%;
+  left: 8%;
+  width: 60px;
+  height: 60px;
+  animation: float 8s ease-in-out infinite;
+}
+
+.bubble-2 {
+  top: 55%;
+  right: 12%;
+  width: 40px;
+  height: 40px;
+  animation: float 10s ease-in-out infinite reverse;
+}
+
+.bubble-3 {
+  bottom: 35%;
+  left: 85%;
+  width: 50px;
+  height: 50px;
+  animation: float 12s ease-in-out infinite;
+}
+
+/* Speed Lines */
+.speed-lines {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.speed-lines::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: repeating-linear-gradient(
+    -15deg,
+    transparent,
+    transparent 3px,
+    currentColor 3px,
+    currentColor 4px
+  );
+  opacity: 0.15;
+}
+
+.speed-lines.active {
+  opacity: 1;
+}
+
+/* One Piece Style Impact Lines */
+.impact-lines {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  opacity: 0.06;
+}
+
+.impact-lines::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle,
+    transparent 20%,
+    currentColor 20%,
+    currentColor 21%,
+    transparent 21%,
+    transparent 25%,
+    currentColor 25%,
+    currentColor 26%,
+    transparent 26%,
+    transparent 30%,
+    currentColor 30%,
+    currentColor 31%,
+    transparent 31%,
+    transparent 35%,
+    currentColor 35%,
+    currentColor 36%,
+    transparent 36%
+  );
+  animation: rotate-in 25s linear infinite;
+}
+
+/* One Piece Style Jagged Panels */
+.jagged-panel {
+  position: absolute;
+  background: transparent;
+  border: 3px solid currentColor;
+}
+
+.jagged-1 {
+  top: 40%;
+  right: 1%;
+  width: 100px;
+  height: 80px;
+  clip-path: polygon(0 0, 80% 0, 100% 20%, 100% 80%, 80% 100%, 0 100%, 20% 80%, 0 20%);
+  animation: float 16s ease-in-out infinite;
+}
+
+.jagged-2 {
+  bottom: 45%;
+  left: 3%;
+  width: 90px;
+  height: 70px;
+  clip-path: polygon(0 20%, 20% 0, 80% 0, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0 80%);
+  animation: float 18s ease-in-out infinite reverse;
+}
+
+/* Manga Panel Borders */
+.manga-panel {
+  border: 3px solid #000;
+  box-shadow: 
+    inset 0 0 0 1px #fff,
+    inset 0 0 0 4px #000,
+    0 0 0 1px #000,
+    5px 5px 0 0 #000;
+  position: relative;
+}
+
+.manga-panel::before {
+  content: '';
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  right: -3px;
+  bottom: -3px;
+  background: 
+    linear-gradient(45deg, transparent 30%, #000 30%, #000 32%, transparent 32%),
+    linear-gradient(-45deg, transparent 30%, #000 30%, #000 32%, transparent 32%);
+  background-size: 10px 10px;
+  z-index: -1;
+  opacity: 0.1;
+}
+
+/* Manga Speech Bubble */
+.manga-bubble {
+  position: relative;
+  background: #fff;
+  border: 3px solid #000;
+  border-radius: 20px;
+  padding: 1rem;
+}
+
+.manga-bubble::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 30px;
+  width: 0;
+  height: 0;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-top: 15px solid #000;
+}
+
+.manga-bubble::before {
+  content: '';
+  position: absolute;
+  bottom: -12px;
+  left: 32px;
+  width: 0;
+  height: 0;
+  border-left: 13px solid transparent;
+  border-right: 13px solid transparent;
+  border-top: 13px solid #fff;
+}
+
+/* Manga Action Lines */
+.action-lines {
+  position: relative;
+  overflow: hidden;
+}
+
+.action-lines::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 2px,
+      #000 2px,
+      #000 3px
+    );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.action-lines:hover::before {
+  opacity: 0.1;
+}
+
+/* Manga Halftone Pattern */
+.halftone {
+  background-image: 
+    radial-gradient(circle, #000 1px, transparent 1px);
+  background-size: 8px 8px;
+  opacity: 0.1;
+}
+
+/* Screen Tone Effect */
+.screen-tone {
+  position: relative;
+}
+
+.screen-tone::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 1px,
+      #000 1px,
+      #000 2px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 1px,
+      #000 1px,
+      #000 2px
+    );
+  opacity: 0.05;
+  pointer-events: none;
+}
