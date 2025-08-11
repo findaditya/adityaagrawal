@@ -27,14 +27,14 @@ const Contact = () => {
     {
       icon: Mail,
       label: 'Email',
-      value: 'aditya.agrawal@example.com',
-      href: 'mailto:aditya.agrawal@example.com'
+      value: 'findadityaagrawal@gmail.com',
+      href: 'mailto:findadityaagrawal@gmail.com'
     },
     {
       icon: Phone,
       label: 'Phone',
-      value: '+91 98765 43210',
-      href: 'tel:+919876543210'
+      value: '+91 83838 92158',
+      href: 'tel:+918383892158'
     },
     {
       icon: MapPin,
@@ -45,9 +45,9 @@ const Contact = () => {
   ];
 
   const socialLinks = [
-    { icon: Github, href: '#', label: 'GitHub' },
-    { icon: Linkedin, href: '#', label: 'LinkedIn' },
-    { icon: Twitter, href: '#', label: 'Twitter' }
+    { icon: Github, href: 'https://github.com/findaditya', label: 'GitHub' },
+    { icon: Linkedin, href: 'https://www.linkedin.com/in/aditya-agrawal1/', label: 'LinkedIn' },
+    { icon: Twitter, href: 'https://x.com/that_aditya', label: 'Twitter' }
   ];
 
   return (

@@ -8,56 +8,76 @@ const Experience = () => {
   const experiences = [
     {
       id: 1,
-      title: "Full Stack Developer",
-      company: "Tech Solutions Inc.",
-      location: "Bangalore, India",
-      duration: "Jan 2023 - Present",
+      title: "SDE-II (Full Stack Developer)",
+      company: "Personify Health | Virgin Pulse",
+      location: "Noida, India",
+      duration: "2024 - Present",
       type: "Full-time",
-      description: "Led development of scalable web applications using React.js and Node.js. Implemented microservices architecture and deployed applications on AWS cloud infrastructure.",
+      description: "Worked on enterprise-grade applications with a focus on scalability, secure integrations, and performance optimization across frontend and backend systems.",
       achievements: [
-        "Improved application performance by 40% through code optimization",
-        "Led a team of 3 developers on multiple projects",
-        "Implemented CI/CD pipelines reducing deployment time by 60%",
-        "Developed RESTful APIs serving 10k+ daily requests"
+        "Developed and integrated TPA form submission for Genesis Web App, enabling seamless data exchange with HealthComp.",
+        "Built secure AWS S3 file upload system with Secure File Picker, ensuring compliance with enterprise security standards.",
+        "Implemented multi-tier support chat UI in Angular, enabling communication from Tier 1 to Tier 2 agents.",
+        "Optimized API response times by 25% using PostgreSQL query optimizations and caching.",
       ],
-      technologies: ["React.js", "Node.js", "AWS", "MongoDB", "Docker"],
-      website: "#"
+      technologies: [
+        "Angular (MFEs)", 
+        "Spring Boot", 
+        "PostgreSQL", 
+        "Keycloak", 
+        "Kafka", 
+        "Docker",
+        "AWS S3",
+        "Secure File Picker",
+        "REST APIs"
+      ],
+      website: "https://personifyhealth.com/"
     },
     {
       id: 2,
-      title: "Junior Full Stack Developer",
-      company: "StartupXYZ",
-      location: "Mumbai, India",
-      duration: "Jun 2022 - Dec 2022",
+      title: "SDE-II (Full Stack Developer - Mobile)",
+      company: "Truminds Software Systems",
+      location: "Gurgaon, India",
+      duration: "2021 - 2024",
       type: "Full-time",
-      description: "Developed and maintained web applications using modern JavaScript frameworks. Collaborated with cross-functional teams to deliver high-quality software solutions.",
+      description: "Led and contributed to multiple large-scale mobile and web products for IoT, e-commerce, and real-time applications.",
       achievements: [
-        "Built responsive web applications from scratch",
-        "Integrated third-party APIs and payment gateways",
-        "Optimized database queries improving response time by 30%",
-        "Mentored 2 junior developers"
+        "SalesHub App: Increased bulk upload speed by 25% via custom QR scanner and improved UX by 20% with real-time WebSocket updates.",
+        "IRBlaster: Led a 5-person team to architect the app for scalability and integrated IR communications for remote appliance control.",
+        "LynkRemote: Integrated device controls via MQTT, reduced API response times by 50% using Kotlin Flows, and added live aircraft camera streaming.",
+        "P2P App: Built socket-based two-way audio streaming between IP cameras and mobile devices using RTSP/RTMP protocols.",
+        "SalesHub Web App & Backend: Developed a multi-tenant B2B e-commerce platform with real-time inventory and JWT-secured dealer access.",
       ],
-      technologies: ["React.js", "Express.js", "MySQL", "Redux", "Git"],
-      website: "#"
+      technologies: [
+        "Dart", "Flutter", "HiveDB", "Bloc", "Android", "Kotlin", "MQTT", 
+        "ReactJS", "Spring Boot", "PostgreSQL", "Redis", "Kafka", "Docker"
+      ],
+      website: "https://www.truminds.com/"
     },
     {
       id: 3,
-      title: "Frontend Developer Intern",
-      company: "Digital Agency Pro",
+      title: "Freelance Developer (Full Stack)",
+      company: "Personal Projects",
       location: "Remote",
-      duration: "Jan 2022 - May 2022",
-      type: "Internship",
-      description: "Gained hands-on experience in frontend development, working on client projects and learning industry best practices.",
+      duration: "2019 - Present",
+      type: "Freelance",
+      description: "Designed, developed, and deployed a variety of full-stack applications across e-commerce, AI, and SaaS domains.",
       achievements: [
-        "Converted 5+ design mockups to responsive web pages",
-        "Learned modern development workflows and tools",
-        "Collaborated with designers and backend developers",
-        "Maintained 99% code quality standards"
+        "Clothing E-Commerce Platform: Built NextJS SSR platform with Stripe integration, real-time MongoDB inventory, and admin dashboard.",
+        "GhostWit: AI-powered ghostwriting app integrating ChatGPT & Whisper voice-to-text transcription.",
+        "Faithin: Journaling & prayer app with streaks, localization, multi-theming, and social logins.",
+        "Flight Booking System: Built real-time seat booking with Redis, multi-gateway payments, and responsive ReactJS frontend.",
+        "All-Purpose E-Commerce: Developed microservices architecture with GraphQL and ElasticSearch, reducing payload size by 40%.",
       ],
-      technologies: ["HTML", "CSS", "JavaScript", "React.js", "Figma"],
-      website: "#"
+      technologies: [
+        "NextJS", "Node.js", "Express", "MongoDB", "TailwindCSS", 
+        "ReactNative", "OpenAI", "Whisper", "Kotlin", "Spring Boot", 
+        "PostgreSQL", "Redis", "Stripe", "Razorpay", "GraphQL", "ElasticSearch"
+      ],
+      website: "" // No external link
     }
   ];
+  
 
   return (
     <section id="experience" className={`py-20 relative transition-colors duration-500 ${
@@ -130,14 +150,18 @@ const Experience = () => {
                           }`}>
                             {exp.company}
                           </h4>
-                          <a 
-                            href={exp.website}
-                            className={`transition-all duration-300 hover:scale-110 hover:rotate-12 ${
-                              theme === 'dark' ? 'text-gray-400 hover:text-white' : 'text-gray-500 hover:text-black'
-                            }`}
-                          >
-                            <ExternalLink size={16} />
-                          </a>
+                          {exp.website && (
+                            <a 
+                              href={exp.website}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className={`transition-all duration-300 hover:scale-110 hover:rotate-12 ${
+                                theme === 'dark' ? 'text-gray-400 hover:text-white' : 'text-gray-500 hover:text-black'
+                              }`}
+                            >
+                              <ExternalLink size={16} />
+                            </a>
+                          )}
                         </div>
                         <div className={`flex flex-wrap items-center gap-4 text-sm transition-colors duration-500 ${
                           theme === 'dark' ? 'text-gray-400' : 'text-gray-500'

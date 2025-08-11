@@ -7,8 +7,6 @@ import Experience from './components/Experience';
 import Skills from './components/Skills';
 import Stats from './components/Stats';
 import Projects from './components/Projects';
-import Blog from './components/Blog';
-import Testimonials from './components/Testimonials';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 
@@ -69,8 +67,8 @@ function App() {
         <Skills />
         <Stats />
         <Projects />
-        <Blog />
-        <Testimonials />
+        {/* <Blog /> */}
+        {/* <Testimonials /> */}
         <Contact />
       </main>
       <Footer />
