@@ -1,4 +1,4 @@
-import React from 'react';
+import profileImg from '../assets/profile.png';
 import { useTheme } from '../contexts/ThemeContext';
 
 const About = () => {
@@ -25,10 +25,8 @@ const About = () => {
           
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="animate-slide-left">
-              <div className={`w-80 h-80 mx-auto rounded-full ${theme === 'dark' ? 'bg-gray-800' : 'bg-gray-100'} flex items-center justify-center transition-all duration-300 hover:scale-105`}>
-                <div className={`w-32 h-32 rounded-full ${theme === 'dark' ? 'bg-white' : 'bg-black'} flex items-center justify-center`}>
-                  <span className={`text-4xl font-bold ${theme === 'dark' ? 'text-black' : 'text-white'}`}>AA</span>
-                </div>
+              <div className={`w-96 h-96 mx-auto rounded-full overflow-hidden ${theme === 'dark' ? 'bg-gray-800' : 'bg-gray-100'} flex items-center justify-center transition-all duration-300 hover:scale-105`}>
+                <img src={profileImg} alt="Profile" className="w-full h-full object-cover object-[50%_70%]" />
               </div>
             </div>
             
